@@ -1,17 +1,69 @@
 {
-  "version": "0.2.0",
+  "version": "0.p${defaultBuildTask}2.0",
   "configurations": [
     
+    {
+      "type": "node",
+      "request": "attach",
+      "name": "Containers: Attach to Node",
+      "remoteRoot": "/usr/src/app"
+    },
+
+    
+
+
+
+
+
+    {
+      "name": "Attach",
+      "port": 9229,
+      "request": "attach",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "type": "node"
+    },
+    
+    
+
+    {
+      "type": "node",
+      /*
+        Template configuration:
+        Replace "address" and "remoteRoot" with actual values before use.
+      */
+      "address": "localhost",
+      "localRoot": "${workspaceFolder}",
+      "name": "Attach to Remote (Template)",
+      "port": 9229,
+      "remoteRoot": "/absolute/path/to/remote/project",
+      "request": "attach",
+      "skipFiles": [
+        "<node_internals>/**"
+      ]
+    },
+    {
+      "type": "node",
+      "request": "attach",
+      "name": "Attach to Remote",
+      "address": "localhost",
+      "localRoot": "${workspaceFolder}",
+      "port": 9229,
+      "skipFiles": [
+        "<node_internals>/**"
+      ]
+    },
     {
       "name": "Run application",
       "type": "node",
       "request": "launch",
       "cwd": "${workspaceFolder}",
       "console": "integratedTerminal",
-      "runtimeExecutable": "npm",
-      "runtimeArgs": [
-        "run-script",
-        "start"
+      "runtimeExecutable": "node",
+      "program": "${workspaceFolder}/node_modules/vite/bin/vite.js",
+      "args": [
+        "dev"
       ],
       "skipFiles": [
         "<node_internals>/**"

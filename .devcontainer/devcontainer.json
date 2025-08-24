@@ -14,6 +14,15 @@
       "openFiles": [
         "src/App.jsx"
       ]
+    },
+    "vscode": {
+      "extensions": [
+        "ms-vscode.remote-server",
+        "ms-vscode-remote.remote-wsl",
+        "christian-kohler.npm-intellisense",
+        "ms-vscode.vscode-typescript-next",
+        "GitHub.copilot"
+      ]
     }
   },
   "portsAttributes": {
